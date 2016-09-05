@@ -1,0 +1,26 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    group = 'org.gradle.sample'
+    version = '1.0'
+}
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    dependencies {
+        testCompile "junit:junit:4.12"
+    }
+}
+
+project(":examples") {
+    dependencies{
+        compile project(":viewResolver")
+    }
+}
+
+project(":viewResolver") {
+
+}
