@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
@@ -25,9 +26,16 @@ public class FirstControllerTest {
     }
 
     @Test
-    public void shouldReturnJSON() throws Exception {
+    public void shouldReturnCorrectView() throws Exception {
         mockMvc.perform(get("/first"))
                 .andExpect(view().name("hello"));
+    }
+
+    @Test
+    public void shouldReturnCorrectModel() throws Exception {
+        mockMvc.perform(get("/second"))
+                .andExpect(view().name("secondView"))
+                .andExpect(model().attributeExists("record"));
     }
 
 }
