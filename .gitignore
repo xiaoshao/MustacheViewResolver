@@ -2,3 +2,7 @@ out
 .idea
 MustacheViewResolver.*
 .gradle
+examples/examples.iml
+examples/build
+viewResolver/viewResolver.iml
+viewResolver/build
