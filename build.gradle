@@ -1,6 +1,8 @@
 allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'war'
+    apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
     group = 'org.gradle.sample'
     version = '1.0'
 }
@@ -12,6 +14,10 @@ subprojects {
     targetCompatibility = JavaVersion.VERSION_1_8
     dependencies {
         compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+        compile group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.7'
+        compile group: 'org.apache.tiles', name: 'tiles-servlet', version: '3.0.7'
+        compile group: 'org.mortbay.jetty', name: 'jetty-management', version: '6.1.26'
+        compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.7'
         testCompile "junit:junit-dep:4.11"
         testCompile "org.mockito:mockito-core:1.10.19"
         testCompile "org.hamcrest:hamcrest-core:1.3"
