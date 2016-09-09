@@ -10,8 +10,7 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        System.out.println("kkkk");
-        return new Class<?>[]{WebConfig.class};
+        return new Class<?>[]{WebConfig.class, ThymeleafConfig.class};
     }
 
     @Override
