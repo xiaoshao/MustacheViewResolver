@@ -2,7 +2,7 @@ package com.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{RootConfig.class};
@@ -15,6 +15,6 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/spring"};
+        return new String[]{"/", "/sp/"};
     }
 }
